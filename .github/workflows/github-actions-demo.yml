@@ -29,7 +29,7 @@ jobs:
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
-Test:
+  Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
     needs: Build
@@ -47,7 +47,7 @@ Test:
           echo "🧪 Testing..."
           sleep 15
 
-  Production:
+   Production:
     runs-on: ubuntu-latest
     needs: [Test, Load-Test]
     environment:
